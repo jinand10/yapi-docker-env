@@ -1,0 +1,9 @@
+.idea/
+.git/
+.phpintel/
+.DS_Store
+*.lock
+.phpunit*
+api/log/*
+data/mongodb/*
+data/yapi/*

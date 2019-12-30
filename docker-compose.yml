@@ -1,0 +1,33 @@
+version: "3"
+services:
+  yapi-mongodb:
+    image: mongo:${MONGODB_VERSION}
+    container_name: yapi-mongodb
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: "${MONGODB_INITDB_ROOT_USERNAME}"
+        MONGO_INITDB_ROOT_PASSWORD: "${MONGODB_INITDB_ROOT_PASSWORD}"
+        TZ: "$TZ"
+    # volumes:
+    #   - ./data/mongodb:/data/db
+    ports:
+      - "${MONGODB_HOST_PORT}:27017"
+    restart: always
+    networks:
+      - default
+    command:
+      --auth
+  yapi-web:
+    build: ./api
+    container_name: yapi-web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api/config.json:/api/config.json
+      - ./api/log:/api/log
+    depends_on: 
+      - yapi-mongodb
+    restart: always
+    networks: 
+      - default
+networks:
+  default:

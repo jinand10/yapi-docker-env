@@ -1,0 +1,23 @@
+{
+    "port": 3000,
+    "adminAccount": "jinand10@163.com",
+    "closeRegister": true,
+    "db": {
+       "servername": "yapi-mongodb",
+       "DATABASE": "yapi",
+       "port": 27017,
+       "user": "root",
+       "pass": "123456",
+       "authSource":"admin"
+    },
+    "mail": {
+       "enable": false,
+       "host": "smtp.163.com",
+       "port": 465,
+       "from": "jinand10@163.com",
+       "auth": {
+          "user": "jinand10@163.com",
+          "pass": "123456"
+       }
+    }
+ }
