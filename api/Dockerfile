@@ -5,6 +5,8 @@ LABEL MAINTAINER jinand10@163.com
 ENV TZ="Asia/Shanghai" 
 ENV YAPI_VERSION="1.8.5"
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk add --no-cache git python make openssl tar gcc
 
 RUN mkdir /api && mkdir /api/package
@@ -26,7 +28,7 @@ COPY ./config.json /api/
 
 EXPOSE 3000
 
-COPY entrypoint.sh /api/
-RUN chmod 755 /api/entrypoint.sh
+#COPY entrypoint.sh /api/
+#RUN chmod 755 /api/entrypoint.sh
 
-ENTRYPOINT ["/api/entrypoint.sh"]
+CMD ["node", "/api/vendors/server/app.js"]
