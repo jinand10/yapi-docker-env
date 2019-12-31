@@ -7,6 +7,7 @@
 ## usage
 
 * 首次安装：  `docker-compose up`
+* 初始化超管账号：  `docker exec -it 容器ID /bin/bash  && node /api/vendors/server/install.js`
 
 ## notice
 
