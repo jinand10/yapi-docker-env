@@ -17,7 +17,7 @@ services:
     command:
       --auth
   yapi-web:
-    build: ./api
+    image: jinand10/yapi:v1.0.0
     container_name: yapi-web
     ports:
       - "3000:3000"
