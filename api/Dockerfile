@@ -20,7 +20,8 @@ RUN npm config set registry https://registry.npm.taobao.org
 
 RUN cd /api/vendors && \
     npm install -g node-gyp yapi-cli && \
-	npm install --production
+	npm install --production && \
+	npm install -g ykit
 
 WORKDIR /api
 

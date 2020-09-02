@@ -11,6 +11,7 @@
 
 ## notice
 
-* 使用端口 `3000:3000`
+* 使用端口 `30002:3000`
 * yapi 版本 为 `v1.8.5`
-* 管理员帐号 `jinand10@163.com` 密码：`ymfe.org`
+* 管理员帐号 `config.json.adminAccount` 密码：`ymfe.org`
+* linux环境下打开mongodb数据卷

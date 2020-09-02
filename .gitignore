@@ -5,5 +5,4 @@
 *.lock
 .phpunit*
 api/log/*
-data/mongodb/*
-data/yapi/*
+data/*
